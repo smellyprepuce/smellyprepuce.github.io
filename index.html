@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Smelly Prepuce :)</title>
+    <meta name="apple-mobile-web-app-title" content="SmellyPrepuce">
+    <meta name="application-name" content="SmellyPrepuce">
+    <link rel="manifest" href="src/site.webmanifest">
+    <meta name="msapplication-config" content="src/browserconfig.xml">
+    <meta name="theme-color" content="#939393">
+    <meta name="msapplication-TileColor" content="#939393">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="src/img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="512x512" href="src/img/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="src/img/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="src/img/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="120x120" href="src/img/favicon-120x120.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="src/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/img/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="src/img/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="src/img/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="src/img/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="src/img/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="src/img/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="src/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="src/img/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="src/img/apple-touch-icon-57x57.png">
+    <link rel="mask-icon" href="src/img/safari-pinned-tab.svg" color="#939393">
+    <meta name="msapplication-wide310x150logo" content="src/img/mstile-310x310.png">
+    <meta name="msapplication-square150x150logo" content="src/img/mstile-150x150.png">
+    <meta name="msapplication-square310x310logo" content="src/img/mstile-310x150.png">
+    <meta name="msapplication-TileImage" content="src/img/mstile-144x144.png">
+    <meta name="msapplication-square70x70logo" content="src/img/mstile-70x70.png">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="src/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <script id="start_page">
+        const python_code = `<style id="css">body{background: black;top: 0;left: 0;position: relative;padding: 0;margin: 0;color: #9e9e9e;font-family: sans-serif}.python_code{margin: 35px}pre{color: forestgreen;font-family: monospace}</style><div class="python_code"><h2>получить свежие прокси на python</h2><h3>1. proxyscrape</h3><pre>import os, requests, threading\ndef check(ip, prox, qtime, f):\n  proxies = {&#39;http&#39;: &#39;http://{}&#39;.format(prox), &#39;https&#39;: &#39;http://{}&#39;.format(prox)}\n  try:\n    ipx = requests.get(&quot;http://checkip.amazonaws.com&quot;, proxies=proxies, timeout=qtime).text\n  except:\n    ipx = ip\n  if ip != ipx:\n    f.write(&quot;{}\n&quot;.format(prox))\nqtime = 1 # таймаут прокси\nwith open(&quot;proxies.txt&quot;, &quot;w+&quot;) as f: # тут можно указать файл куда сохранить прокси\n  req = requests.get(&quot;https://api.proxyscrape.com/v2/?request=displayproxies&amp;protocol=https&amp;timeout=350&amp;country=US&amp;ssl=all&amp;anonymity=elite&amp;simplified=true&quot;)\n  array = req.text.split()\n  ip = requests.post(&quot;http://checkip.amazonaws.com&quot;).text\n  thread_list = []\n  for prox in array:\n    t = threading.Thread(target=check, args=(ip, prox, qtime, f))\n    thread_list.append(t)\n    t.start()\n  for t in thread_list:\n    t.join()</pre><h3>2. prawler</h3><pre>\nimport os.path, subprocess\nsubprocess.run([&#39;pip&#39;,&#39;install&#39;,&#39;Prawler&#39;,&#39;-qq&#39;]);import Prawler\nprint(&quot;\socks5 прокси:&quot;)\nproxy = Prawler.get_random_proxy(&quot;socks5&quot;, &quot;elite&quot;)\nprint(proxy)\nproxy = Prawler.get_random_proxy(&quot;socks5&quot;, &quot;elite&quot;)\nprint(proxy)\nproxy = Prawler.get_random_proxy(&quot;socks5&quot;, &quot;elite&quot;)\nprint(proxy)\nproxy = Prawler.get_random_proxy(&quot;socks5&quot;, &quot;elite&quot;)\nprint(proxy)\nproxy = Prawler.get_random_proxy(&quot;socks5&quot;, &quot;elite&quot;)\nprint(proxy)\nprint(&quot;socks4 прокси:&quot;)\nproxy = Prawler.get_random_proxy(&quot;socks4&quot;, &quot;elite&quot;)\nprint(proxy)\nproxy = Prawler.get_random_proxy(&quot;socks4&quot;, &quot;elite&quot;)\nprint(proxy)\nproxy = Prawler.get_random_proxy(&quot;socks4&quot;, &quot;elite&quot;)\nprint(proxy)\nproxy = Prawler.get_random_proxy(&quot;socks4&quot;, &quot;elite&quot;)\nprint(proxy)\nproxy = Prawler.get_random_proxy(&quot;socks4&quot;, &quot;elite&quot;)\nprint(proxy)\nprint(&quot;http прокси:&quot;)\nproxy = Prawler.get_random_proxy(&quot;http&quot;, &quot;elite&quot;)\nprint(proxy)\nproxy = Prawler.get_random_proxy(&quot;http&quot;, &quot;elite&quot;)\nprint(proxy)\nproxy = Prawler.get_random_proxy(&quot;http&quot;, &quot;elite&quot;)\nprint(proxy)\nproxy = Prawler.get_random_proxy(&quot;http&quot;, &quot;elite&quot;)\nprint(proxy)\nproxy = Prawler.get_random_proxy(&quot;http&quot;, &quot;elite&quot;)\nprint(proxy)</pre><h3>3.http(s)-proxy</h3><pre>\nsubprocess.run([&#39;pip&#39;,&#39;install&#39;,&#39;free-proxy&#39;,&#39;-qq&#39;]);from fp.fp import FreeProxy\nprint(&quot;ждем получения...&quot;)\ntry:\n  httpprx = FreeProxy(country_id=[&#39;US&#39;, &#39;DE&#39;, &#39;FI&#39;, &#39;LV&#39;, &#39;CA&#39;, &#39;UA&#39;, <span id="ru">&#39;RU&#39;</span>, &#39;NL&#39;], timeout=1, rand=False, google=True, elite=True).get()\n  clear_output()\n  print(&quot;http-прокся: &quot;+httpprx)\nexcept FreeProxyException:\n  print(&quot;сейчас рабочих прокси не оказалось&quot;)</pre></div>`;
+        document.querySelector('body').insertAdjacentHTML('afterbegin', python_code);
+    </script>
+</body>
+
+</html>
